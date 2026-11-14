@@ -1,0 +1,19 @@
+[package]
+name = "lvim-fuzzy-core"
+version = "0.1.0"
+edition = "2024"
+license = "BSD-3-Clause"
+description = "The lvim fuzzy search engine: one matcher for lvim-fuzzy (Neovim) and lvim-fuzzy-cli"
+repository = "https://github.com/lvim-tech/lvim-fuzzy-core"
+readme = "README.md"
+keywords = ["fuzzy", "matcher", "search", "fzf"]
+categories = ["text-processing", "algorithms"]
+
+[dependencies]
+memchr = "2"
+rayon = "1.12"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1

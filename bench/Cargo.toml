@@ -1,0 +1,22 @@
+# Not part of the library: lvim-fuzzy-core's search against other fuzzy
+# matchers (dependencies of this benchmark only), in memory: match + sort.
+[package]
+name = "core-bench"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[workspace]
+
+[dependencies]
+lvim-fuzzy-core = { path = ".." }
+frizbee = "0.13"
+nucleo-matcher = "0.3"
+fuzzy-matcher = "0.3"
+sublime_fuzzy = "0.7"
+rayon = "1.12"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
